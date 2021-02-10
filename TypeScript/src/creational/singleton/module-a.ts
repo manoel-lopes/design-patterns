@@ -1,25 +1,22 @@
 import { MyDatabaseClassic } from './db/implementations/my-database-classic'
 import { MyDatabaseModule } from './db/implementations/my-database-module'
 import { MyDatabaseFunction } from './db/implementations/my-database-function'
-import { myDatabase as myDatabaseModuleA } from './module-a'
 
 // const myDatabase = MyDatabaseClassic.instance
 // const myDatabase = MyDatabaseModule
 const myDatabase = MyDatabaseFunction
 
 myDatabase.store({
-  name: 'Julliete',
-  email: 'jull.lopes@hotmail.com'
+  name: 'Manoel',
+  email: 'manoafonso.lopes@hotmail.com'
 })
 myDatabase.store({
-  name: 'Gilmar',
-  email: 'gilgil@hotmail.com'
+  name: 'Athur Oliveira',
+  email: 'aoliveira@hotmail.com'
 })
 myDatabase.store({
-  name: 'Bianca',
-  email: 'bianquinha@hotmail.com'
+  name: 'Maju Coutinho',
+  email: 'mjcoutinho@hotmail.com'
 })
 
-myDatabase.index()
-
-console.log(myDatabaseModuleA === myDatabase)
+export { myDatabase }
