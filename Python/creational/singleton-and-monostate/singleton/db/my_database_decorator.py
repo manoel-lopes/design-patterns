@@ -1,0 +1,2 @@
+class MyDatabaseDecorator:
+    pass
