@@ -1,18 +1,18 @@
-import { User } from '../user'
+import {User} from '../User'
 
-export class MyDatabaseClassic {
-  private static _instance: MyDatabaseClassic = null
+export class MyDatabaseClass {
+  private static _instance: MyDatabaseClass = null
 
   private users: User[] = []
 
   private constructor() {}
 
   static get instance() {
-    if (!MyDatabaseClassic._instance) {
-      MyDatabaseClassic._instance = new MyDatabaseClassic()
+    if (!MyDatabaseClass._instance) {
+      MyDatabaseClass._instance = new MyDatabaseClass()
     }
 
-    return MyDatabaseClassic._instance
+    return MyDatabaseClass._instance
   }
 
   store(user: User) {

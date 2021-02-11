@@ -1,8 +1,8 @@
-import { User } from '../user'
+import { User } from '../User'
 
 const users: User[] = []
 
-export const MyDatabaseModule = {
+export const MyDatabaseObject = {
   store(user: User) {
     if (!user.id) {
       user.id = users.length + 1
