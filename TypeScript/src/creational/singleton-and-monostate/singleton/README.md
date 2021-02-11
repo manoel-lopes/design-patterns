@@ -23,10 +23,6 @@ Em entrevista, anos após a criação do livro, Erich Gamma (um dos autores), me
 
 ---
 
-## Estrutura
-
-Veja a pasta diagramas.
-
 ## Aplicabilidade
 
 Use o singleton quando:
@@ -39,9 +35,9 @@ Use o singleton quando:
 Isso pode mudar de linguagem para linguagem, em Python seria de uma maneira, em JavaScript de outra e em linguagens com tipagem estática, como TypeScript, de outra. Mas o senso comum sobre singletons é o seguinte:
 
 - Declarar um campo privado na classe para armazenar a instância do Singleton.
-- Declarar um método público (getter) para obter a instância do Singleton;
-- Na chamada do método público, adicione *lazy instantiation*, ou seja, verifique se uma instância do Singleton já foi criada; se foi, retorne-a, se não crie uma nova instância e retorne-a.
-- Não permita que novas instâncias da classe. Você pode atingir facilmente este objetivo fazendo o construtor da classe privado.
+- Declarar um método público (getter) para obter a instância do Singleton.
+- Na  chamada  do  método  público,  adicione  *lazy instantiation*, ou seja, verifique se uma instância do Singleton já foi criada; se foi, retorne-a, se não crie uma nova instância e retorne-a.
+- Não permita que novas instâncias da classe. Você  pode  atingir  facilmente este objetivo fazendo o construtor da classe privado.
 
 ## Consequências
 

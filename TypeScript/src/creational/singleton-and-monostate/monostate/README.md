@@ -2,13 +2,20 @@
 
 ## Intenção
 
-*Esconder o fato de que  a  classe somente opera com uma instância única  de dados usando  membros  estáticos. Por isso, todos os membros de um Monostate são estáticos  e todas  as  suas  instâncias  usam  esse  dado  estático. As aplicações  que  usam  o  padrão  Monostate,  podem criar qualquer número de instâncias que desejarem e cada uma delas usará o mesmo dado.*
+*Esconder o fato de que  a  classe somente opera com uma instância única  de dados. As aplicações  que  usam  o  padrão  Monostate,  podem criar qualquer número de instâncias que desejarem e cada uma delas usará o mesmo dado.*
 
 ---
 
 ## Destilando a intenção
 
 O padrão Monostate é outra maneira de se  obter  singularidade. Foi  descrito pela primeira vez em 1996 na revista C++ Reports , funcionando por meio de um mecanismo completamente diferente como um “modelo conceitual do Singleton”. O interessante  deste  padrão  é  que quando uma classe é “Monostate”, evita-se qualquer  complicação  sobre ter acesso a uma particular instância da classe, pois qualquer uma é tão boa quanto as outras.
+
+---
+
+## Implementação - Teoria
+
+- Utiliza  membros  estáticosPor.
+- Todas  as  suas  instâncias  utilizam o mesmo dado estático.
 
 ---
 
