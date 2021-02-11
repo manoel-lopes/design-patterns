@@ -1,0 +1,2 @@
+class MyDatabaseMetaclass:
+    pass

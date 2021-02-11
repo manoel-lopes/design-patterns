@@ -3,9 +3,9 @@ class MyDatabase:
     __instance = None
     __users = []
 
-    def __new__(cls):
+    def __new__(cls, *args, **kwargs):
         if cls.__instance is None:
-            cls.__instance = super().__new__(cls)
+            cls.__instance = super().__new__(cls, *args, **kwargs)
         return cls.__instance
 
     def store(self, user):

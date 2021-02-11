@@ -1,6 +1,10 @@
 from db.my_database import MyDatabase
+from db.my_database_decorator import MyDatabaseDecorator
+from db.my_database_metaclass import MyDatabaseMetaclass
 
-myDatabase = MyDatabase()
+# myDatabase = MyDatabase()
+# myDatabase = MyDatabaseMetaclass()
+myDatabase = MyDatabaseDecorator()
 
 myDatabase.store({
     'name': 'Manoel',
