@@ -1,6 +1,6 @@
 import { User } from '../User'
 
-export class MyDatabaseClass {
+class MyDatabaseClass {
   private static _instance: MyDatabaseClass = null
 
   private users: User[] = []
@@ -27,3 +27,5 @@ export class MyDatabaseClass {
 
   index = () => console.log(this.users)
 }
+
+export default MyDatabaseClass

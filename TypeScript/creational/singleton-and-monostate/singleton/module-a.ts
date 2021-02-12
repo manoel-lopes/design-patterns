@@ -1,10 +1,9 @@
-import { MyDatabaseClass } from './db/implementations/my-database-class'
-import { MyDatabaseObject } from './db/implementations/my-database-object'
-import { MyDatabaseFunction } from './db/implementations/my-database-function'
+import MyDatabase from './db/implementations/my-database-class'
+// import MyDatabase from './db/implementations/my-database-object'
+// import MyDatabase from './db/implementations/my-database-function'
 
-const myDatabase = MyDatabaseClass.instance
-// const myDatabase = MyDatabaseObject
-// const myDatabase = MyDatabaseFunction
+const myDatabase = MyDatabase.instance
+// const myDatabase = MyDatabase
 
 myDatabase.store({
   name: 'Manoel',
@@ -19,4 +18,4 @@ myDatabase.store({
   email: 'mjcoutinho@hotmail.com'
 })
 
-export { myDatabase }
+export default myDatabase

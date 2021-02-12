@@ -2,7 +2,7 @@ import { User } from '../User'
 
 const users: User[] = []
 
-export const MyDatabaseObject = {
+const MyDatabaseObject = {
   store(user: User) {
     if (!user.id) {
       user.id = users.length + 1
@@ -15,3 +15,5 @@ export const MyDatabaseObject = {
 
   index: () => console.log(users)
 }
+
+export default MyDatabaseObject

@@ -1,11 +1,10 @@
-import { MyDatabaseClass } from './db/implementations/my-database-class'
-import { MyDatabaseObject } from './db/implementations/my-database-object'
-import { MyDatabaseFunction } from './db/implementations/my-database-function'
-import { myDatabase as myDatabaseModuleA } from './module-a'
+import MyDatabase from './db/implementations/my-database-class'
+// import MyDatabase from './db/implementations/my-database-object'
+// import MyDatabase from './db/implementations/my-database-function'
+import myDatabaseModuleA from './module-a'
 
-const myDatabase = MyDatabaseClass.instance
-// const myDatabase = MyDatabaseObject
-// const myDatabase = MyDatabaseFunction
+const myDatabase = MyDatabase.instance
+// const myDatabase = MyDatabase
 
 myDatabase.store({
   name: 'Julliete',
@@ -19,8 +18,6 @@ myDatabase.store({
   name: 'Bianca',
   email: 'bianquinha@hotmail.com'
 })
-
-myDatabase.delete(1)
 
 myDatabase.index()
 

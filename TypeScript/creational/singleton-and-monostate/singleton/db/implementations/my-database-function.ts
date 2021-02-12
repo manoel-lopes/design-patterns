@@ -1,6 +1,6 @@
 import { User } from '../User'
 
-export const MyDatabaseFunction = (() => {
+const MyDatabaseFunction = (() => {
   const users: User[] = []
 
   return {
@@ -17,3 +17,5 @@ export const MyDatabaseFunction = (() => {
     index: () => console.log(users)
   }
 })()
+
+export default MyDatabaseFunction
