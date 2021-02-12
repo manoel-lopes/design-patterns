@@ -1,10 +1,8 @@
-from db.my_database import MyDatabase
-from db.my_database_decorator import MyDatabaseDecorator
-from db.my_database_metaclass import MyDatabaseMetaclass
+# from db.my_database import MyDatabase
+from db.my_database_decorator import MyDatabaseDecorator as MyDatabase
+# from db.my_database_metaclass import MyDatabaseMetaclass as MyDatabase
 
-# myDatabase = MyDatabase()
-# myDatabase = MyDatabaseMetaclass()
-myDatabase = MyDatabaseDecorator()
+myDatabase = MyDatabase()
 
 myDatabase.store({
     'name': 'Manoel',
