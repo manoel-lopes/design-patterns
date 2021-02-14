@@ -1,11 +1,14 @@
+from typing import Dict
+
+
 def singleton(the_class):
-    instances = {}
+    __instances: Dict = {}
 
 
     def get_class(*args, **kwargs):
-        if the_class not in instances:
-            instances[the_class] = the_class(*args, **kwargs)
-        return instances[the_class]
+        if the_class not in __instances:
+            __instances[the_class] = the_class(*args, **kwargs)
+        return __instances[the_class]
     return get_class
 
 @singleton
