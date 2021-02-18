@@ -1,4 +1,4 @@
-export interface ECommerceProductProtocol {
-  name: string;
-  price: number;
+export type ECommerceProductProtocol = {
+  name: string
+  price: number
 }
