@@ -5,7 +5,7 @@ export type ECommerceProductProtocol = {
 
 export class ECommerceShoppingCart {
   private _products: ECommerceProductProtocol[] = []
-  protected _discount: Discount = new Discount()
+  protected _discount: Discount = null
 
   addProduct(...products: ECommerceProductProtocol[]) {
     products.forEach(product => this._products.push(product))
@@ -24,22 +24,20 @@ export class ECommerceShoppingCart {
   }
 
   get total() {
-    return this._discount.getDiscount(this)
+    return !this._discount
+      ? this.subTotal
+      : this._discount.getDiscount(this.subTotal)
   }
 }
 
-export class Discount {
-  getDiscount(cart: ECommerceShoppingCart) {
-    return cart.subTotal
-  }
+export interface Discount {
+  getDiscount(subTotal: number): number
 }
 
-export class DefaultDiscount extends Discount {
+export class DefaultDiscount implements Discount {
   protected _discount = 0
 
-  getDiscount(cart: ECommerceShoppingCart) {
-    const subTotal = cart.subTotal
-
+  getDiscount(subTotal: number) {
     if (subTotal >= 100 && subTotal < 200) {
       this._discount = 10
     } else if (subTotal >= 200 && subTotal < 300) {
