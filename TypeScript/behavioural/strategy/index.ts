@@ -35,28 +35,30 @@ export interface Discount {
 }
 
 export class DefaultDiscount implements Discount {
-  protected _discount = 0
-
   getDiscount(subTotal: number) {
-    if (subTotal >= 100 && subTotal < 200) {
-      this._discount = 10
-    } else if (subTotal >= 200 && subTotal < 300) {
-      this._discount = 20
-    } else if (subTotal >= 300) {
-      this._discount = 30
-    }
-    return subTotal - subTotal * (this._discount / 100)
+    return subTotal - subTotal * 0.1
+  }
+}
+
+export class SpecialDiscount implements Discount {
+  getDiscount(subTotal: number) {
+    return subTotal - subTotal * 0.2
+  }
+}
+
+export class ExceptionalDiscount implements Discount {
+  getDiscount(subTotal: number) {
+    return subTotal - subTotal * 0.3
   }
 }
 
 const shoppingCart = new ECommerceShoppingCart()
 shoppingCart.addProduct({ name: 'Product 1', price: 50 })
 shoppingCart.addProduct({ name: 'Product 2', price: 50 })
-shoppingCart.addProduct({ name: 'Product 2', price: 50 })
-shoppingCart.addProduct({ name: 'Product 2', price: 50 })
-shoppingCart.addProduct({ name: 'Product 2', price: 50 })
-shoppingCart.addProduct({ name: 'Product 2', price: 50 })
-shoppingCart.discount = new DefaultDiscount()
+// shoppingCart.addProduct({ name: 'Product 3', price: 50 })
+// shoppingCart.discount = new DefaultDiscount()
+// shoppingCart.discount = new SpecialDiscount()
+shoppingCart.discount = new ExceptionalDiscount()
 console.log(shoppingCart.subTotal)
 console.log(shoppingCart.total)
 
