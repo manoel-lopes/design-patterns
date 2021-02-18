@@ -26,28 +26,28 @@ export class ECommerceShoppingCart {
   get total() {
     return !this._discount
       ? this.subTotal
-      : this._discount.getDiscount(this.subTotal)
+      : this._discount.calculateTotal(this.subTotal)
   }
 }
 
 export interface Discount {
-  getDiscount(subTotal: number): number
+  calculateTotal(subTotal: number): number
 }
 
 export class DefaultDiscount implements Discount {
-  getDiscount(subTotal: number) {
+  calculateTotal(subTotal: number) {
     return subTotal - subTotal * 0.1
   }
 }
 
 export class SpecialDiscount implements Discount {
-  getDiscount(subTotal: number) {
+  calculateTotal(subTotal: number) {
     return subTotal - subTotal * 0.2
   }
 }
 
 export class ExceptionalDiscount implements Discount {
-  getDiscount(subTotal: number) {
+  calculateTotal(subTotal: number) {
     return subTotal - subTotal * 0.3
   }
 }
