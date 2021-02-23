@@ -1,5 +1,5 @@
 import { Product } from '../Product'
-import { Discount } from '../../discount/Discount'
+import { Discount } from '../../discounts/Discount'
 
 export class ShoppingCart {
   private _products: Product[] = []
